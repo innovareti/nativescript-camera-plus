@@ -4,7 +4,7 @@
  * Version 1.1.0                                                   team@nStudio.io
  **********************************************************************************/
 
-import { ContentView } from 'tns-core-modules/ui/content-view';
+import { ContentView } from '@nativescript/core/ui/content-view';
 import { CameraPlus as CameraPlusDefinition } from '.';
 
 export class CameraUtil {
@@ -193,12 +193,12 @@ export abstract class CameraPlusBase extends ContentView implements CameraPlusDe
   /**
    * Toggles the device camera (front/back).
    */
-  toggleCamera(): void {}
+  toggleCamera(): void { }
 
   /**
    * Toggles the active camera flash mode.
    */
-  toggleFlash(): void {}
+  toggleFlash(): void { }
 
   /**
    * Gets the flash mode
@@ -382,10 +382,10 @@ export interface IVideoOptions {
 export function GetSetProperty() {
   return (target, propertyKey: string) => {
     Object.defineProperty(target, propertyKey, {
-      get: function() {
+      get: function () {
         return this['_' + propertyKey];
       },
-      set: function(value) {
+      set: function (value) {
         if (this['_' + propertyKey] === value) {
           return;
         }

@@ -1,17 +1,16 @@
+import * as app from '@nativescript/core/application';
+import { ImageAsset } from '@nativescript/core/image-asset';
+import { device } from '@nativescript/core/platform';
+import { View } from '@nativescript/core/ui/core/view';
+import * as types from '@nativescript/core/utils/types';
+import * as utils from '@nativescript/core/utils/utils';
 /**********************************************************************************
  * (c) 2017, nStudio, LLC & LiveShopper, LLC
  *
  * Version 1.1.0                                                    team@nStudio.io
  **********************************************************************************/
 /// <reference path="./node_modules/tns-platform-declarations/android.d.ts" />
-
 import * as permissions from 'nativescript-permissions';
-import * as app from 'tns-core-modules/application';
-import { ImageAsset } from 'tns-core-modules/image-asset';
-import { device } from 'tns-core-modules/platform';
-import { View } from 'tns-core-modules/ui/core/view';
-import * as types from 'tns-core-modules/utils/types';
-import * as utils from 'tns-core-modules/utils/utils';
 import {
   CameraPlusBase,
   CameraVideoQuality,

@@ -1,5 +1,5 @@
-import * as app from 'tns-core-modules/application';
-import { ImageAsset } from 'tns-core-modules/image-asset';
+import * as app from '@nativescript/core/application';
+import { ImageAsset } from '@nativescript/core/image-asset';
 import { CLog } from './camera-plus.common';
 
 /**

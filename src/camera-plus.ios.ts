@@ -4,12 +4,12 @@
  * Version 1.1.0                                                    team@nStudio.io
  **********************************************************************************/
 
-import { Color } from 'tns-core-modules/color';
-import * as fs from 'tns-core-modules/file-system/file-system';
-import { ImageAsset } from 'tns-core-modules/image-asset';
-import * as platform from 'tns-core-modules/platform';
-import { View } from 'tns-core-modules/ui/core/view';
-import * as types from 'tns-core-modules/utils/types';
+import { Color } from '@nativescript/core/color';
+import * as fs from '@nativescript/core/file-system/file-system';
+import { ImageAsset } from '@nativescript/core/image-asset';
+import * as platform from '@nativescript/core/platform';
+import { View } from '@nativescript/core/ui/core/view';
+import * as types from '@nativescript/core/utils/types';
 import {
   CameraPlusBase,
   CameraTypes,
@@ -91,7 +91,7 @@ class QBImagePickerControllerDelegateImpl extends NSObject implements QBImagePic
 
     let cnt = 0;
 
-    const next = function() {
+    const next = function () {
       cnt++;
       if (cnt === assets.count) {
         this._callback(selection);
@@ -111,7 +111,7 @@ class QBImagePickerControllerDelegateImpl extends NSObject implements QBImagePic
             asset,
             requestOptions,
             (imageData: NSData, dataUti: string, orientation: CGImagePropertyOrientation, info: NSDictionary<any, any>) => {
-              const image = new UIImage({data: imageData});
+              const image = new UIImage({ data: imageData });
               const imageAsset = new ImageAsset(image);
               if (this._width) imageAsset.options.width = this._width;
               if (this._height) imageAsset.options.height = this._height;
@@ -953,12 +953,12 @@ export class CameraPlus extends CameraPlusBase {
   }
 }
 
-const rootVC = function() {
+const rootVC = function () {
   const appWindow = UIApplication.sharedApplication.keyWindow;
   return appWindow.rootViewController;
 };
 
-const createButton = function(
+const createButton = function (
   target: any,
   frame: CGRect,
   label: string,
@@ -997,14 +997,14 @@ const createButton = function(
   return btn;
 };
 
-const addShadow = function(button: UIButton) {
+const addShadow = function (button: UIButton) {
   button.layer.shadowColor = UIColor.blackColor.CGColor;
   button.layer.shadowOffset = CGSizeMake(0, 0);
   button.layer.shadowRadius = 5;
   button.layer.shadowOpacity = 1;
 };
 
-const createIcon = function(
+const createIcon = function (
   type: 'flash' | 'flashOff' | 'toggle' | 'picOutline' | 'takePic' | 'gallery',
   size?: CGSize,
   color?: string
@@ -1040,7 +1040,7 @@ const createIcon = function(
   return img;
 };
 
-const drawFlash = function(color: string) {
+const drawFlash = function (color: string) {
   const iconColor = new Color(color || '#fff').ios;
 
   //// Bezier Drawing
@@ -1122,7 +1122,7 @@ const drawFlash = function(color: string) {
   bezierPath.fill();
 };
 
-const drawFlashOff = function(color: string) {
+const drawFlashOff = function (color: string) {
   const iconColor = new Color(color || '#fff').ios;
 
   //// Bezier Drawing
@@ -1263,7 +1263,7 @@ const drawFlashOff = function(color: string) {
   bezier2Path.fill();
 };
 
-const drawToggle = function(color: string) {
+const drawToggle = function (color: string) {
   const iconColor = new Color(color || '#fff').ios;
 
   //// Bezier Drawing
@@ -1502,7 +1502,7 @@ const drawToggle = function(color: string) {
   bezier3Path.fill();
 };
 
-const drawPicOutline = function(color: string) {
+const drawPicOutline = function (color: string) {
   const iconColor = new Color(color || '#fff').ios;
 
   //// Bezier Drawing
@@ -1616,7 +1616,7 @@ const drawPicOutline = function(color: string) {
   // bezier2Path.fill();
 };
 
-const drawCircle = function(color: string) {
+const drawCircle = function (color: string) {
   const iconColor = new Color(color || '#fff').ios;
 
   // inner circle
@@ -1658,7 +1658,7 @@ const drawCircle = function(color: string) {
   bezier2Path.fill();
 };
 
-const drawGallery = function(color: string) {
+const drawGallery = function (color: string) {
   const iconColor = new Color(color || '#fff').ios;
 
   //// Bezier Drawing
