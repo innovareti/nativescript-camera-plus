@@ -1,6 +1,6 @@
 import * as app from '@nativescript/core/application';
 import { ImageAsset } from '@nativescript/core/image-asset';
-import { device } from '@nativescript/core/platform';
+import { device } from '@nativescript/core/platform/platform';
 import { View } from '@nativescript/core/ui/core/view';
 import * as types from '@nativescript/core/utils/types';
 import * as utils from '@nativescript/core/utils/utils';
