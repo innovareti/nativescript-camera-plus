@@ -9,7 +9,7 @@ import * as permissions from 'nativescript-permissions';
 import * as app from 'tns-core-modules/application';
 import { ImageAsset } from 'tns-core-modules/image-asset';
 import { device } from 'tns-core-modules/platform';
-import { View } from 'tns-core-modules/ui/core/view/view';
+import { View } from 'tns-core-modules/ui/core/view';
 import * as types from 'tns-core-modules/utils/types';
 import * as utils from 'tns-core-modules/utils/utils';
 import {
@@ -46,6 +46,8 @@ const CAMERA_FACING_BACK = 0; // rear camera
 const RESULT_CODE_PICKER_IMAGES = 941;
 const RESULT_OK = -1;
 // AndroidX support
+
+declare var android;
 
 // Snapshot-friendly functions
 const CAMERA = () => (android as any).Manifest.permission.CAMERA;
@@ -171,7 +173,7 @@ export class CameraPlus extends CameraPlusBase {
     this.on(View.layoutChangedEvent, this._onLayoutChangeListener);
     const listenerImpl = (co as any).fitcom.fancycamera.CameraEventListenerUI.extend({
       owner: null,
-      onCameraCloseUI(): void {},
+      onCameraCloseUI(): void { },
       async onPhotoEventUI(event: co.fitcom.fancycamera.PhotoEvent) {
         const owner = this.owner ? this.owner.get() : null;
         if (event.getType() === co.fitcom.fancycamera.EventType.ERROR) {

@@ -1,7 +1,7 @@
 import { Observable } from '@nativescript/core/data/observable';
 import { ImageAsset } from '@nativescript/core/image-asset';
 import { ImageSource } from '@nativescript/core/image-source';
-import { screen } from '@nativescript/core/platform';
+import { Screen } from '@nativescript/core/platform';
 import { Frame } from '@nativescript/core/ui/frame';
 import { Image } from '@nativescript/core/ui/image';
 import { Page } from '@nativescript/core/ui/page';
@@ -18,12 +18,12 @@ export class HelloWorldModel extends Observable {
   constructor(page: Page) {
     super();
 
-    this.cam = page.getViewById('camPlus') as CameraPlus;
+    this.cam = page.getViewById('camPlus') as unknown as CameraPlus;
 
     // hide a default icon button here
     // this.cam.showGalleryIcon = false
 
-    this.cameraHeight = screen.mainScreen.heightDIPs * 0.6;
+    this.cameraHeight = Screen.mainScreen.heightDIPs * 0.6;
 
     if (this._counter > 0) {
       return;

@@ -5,10 +5,12 @@
  * Version 1.1.0                                       			   team@nStudio.io
  **********************************************************************************/
 /// <reference path="./node_modules/tns-platform-declarations/android.d.ts" />
+declare var java;
+declare var android;
 
-import * as application from 'tns-core-modules/application';
-import { ImageAsset } from 'tns-core-modules/image-asset';
-import { ImageSource } from 'tns-core-modules/image-source';
+import * as application from '@nativescript/core/application';
+import { ImageAsset } from '@nativescript/core/image-asset';
+import { ImageSource } from '@nativescript/core/image-source';
 
 interface ArrayBufferStatic extends ArrayBufferConstructor {
   from(buffer: java.nio.ByteBuffer): ArrayBuffer;
