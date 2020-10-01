@@ -1,6 +1,10 @@
 import * as app from '@nativescript/core/application';
 import { ImageAsset } from '@nativescript/core/image-asset';
+<<<<<<< Updated upstream
 import { device } from '@nativescript/core/platform/platform';
+=======
+import { Device } from '@nativescript/core/platform';
+>>>>>>> Stashed changes
 import { View } from '@nativescript/core/ui/core/view';
 import * as types from '@nativescript/core/utils/types';
 import * as utils from '@nativescript/core/utils/utils';
@@ -53,9 +57,9 @@ const CAMERA = () => (android as any).Manifest.permission.CAMERA;
 const RECORD_AUDIO = () => (android as any).Manifest.permission.RECORD_AUDIO;
 const READ_EXTERNAL_STORAGE = () => (android as any).Manifest.permission.READ_EXTERNAL_STORAGE;
 const WRITE_EXTERNAL_STORAGE = () => (android as any).Manifest.permission.WRITE_EXTERNAL_STORAGE;
-// Since these device.* properties resolve directly to the android.* namespace,
+// Since these Device.region* properties resolve directly to the android.* namespace,
 // the snapshot will fail if they resolve during import, so must be done via a function
-const DEVICE_INFO_STRING = () => `device: ${device.manufacturer} ${device.model} on SDK: ${device.sdkVersion}`;
+const DEVICE_INFO_STRING = () => `device: ${Device.manufacturer} ${Device.model} on SDK: ${Device.sdkVersion}`;
 
 export class CameraPlus extends CameraPlusBase {
   // @GetSetProperty() public camera: android.hardware.Camera;
@@ -714,7 +718,7 @@ export class CameraPlus extends CameraPlusBase {
   }
 
   /**
-   * Return the current flash mode of the device. Will return null if the flash mode is not supported by device.
+   * Return the current flash mode of the Device.region Will return null if the flash mode is not supported by Device.region
    */
   public getFlashMode() {
     if (this.hasFlash()) {
